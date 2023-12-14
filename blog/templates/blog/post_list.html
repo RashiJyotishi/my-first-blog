@@ -7,6 +7,14 @@
         <header>
             <h1><a href="/">Django Blog</a></h1>
         </header>
+        {% for post in posts %}
+        <!-- {{ post }} -->
+        <article>
+            <time>published: {{ post.published_date }}, {{ post.published_time }}</time>
+            <h2><a href="#">{{ post.title }}</a></h2>
+            <p>{{ post.title|linebreaksbr }}</p>
+        </article>
+        {% endfor %}
         <article>
             <time>published: 13.12.2023, 10:13</time>
             <h2><a href="">my first post</a></h2>
